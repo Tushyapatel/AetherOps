@@ -4,6 +4,8 @@ from database import get_db, engine, Base
 from models import User
 from auth import hash_password, verify_password, create_access_token, decode_access_token
 from pydantic import BaseModel
+from auth import require_role
+
 
 # This creates the actual table in Postgres if it doesn't already exist
 # (safe to run every time — it does nothing if the table's already there)
@@ -11,6 +13,10 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+@app.get("/admin/users")
+def list_all_users(current_user: dict = Depends(require_role(["admin"])), db: Session = Depends(get_db)):
+    users = db.query(User).all()
+    return [{"id": u.id, "email": u.email, "role": u.role} for u in users]
 
 # Pydantic models define the "shape" of data we expect in requests —
 # FastAPI uses these to validate incoming JSON automatically

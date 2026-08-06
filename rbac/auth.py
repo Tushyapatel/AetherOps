@@ -1,3 +1,23 @@
+from fastapi import Depends, HTTPException
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+
+security = HTTPBearer()
+
+def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    """Extracts and verifies the token from the Authorization header automatically."""
+    token = credentials.credentials
+    payload = decode_access_token(token)
+    if not payload:
+        raise HTTPException(status_code=401, detail="Invalid or expired token")
+    return payload  # contains user_id and role
+
+def require_role(allowed_roles: list[str]):
+    """Returns a dependency that only allows users with one of the given roles through."""
+    def role_checker(current_user: dict = Depends(get_current_user)):
+        if current_user["role"] not in allowed_roles:
+            raise HTTPException(status_code=403, detail="You don't have permission to do this")
+        return current_user
+    return role_checker
 from dotenv import load_dotenv
 import os
 
