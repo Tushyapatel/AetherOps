@@ -1,0 +1,8 @@
+id: rds-unencrypted
+title: RDS instance not encrypted
+severity: medium
+resource_type: rds_instance
+condition:
+  field: storage_encrypted
+  equals: false
+explanation: "This database's storage is not encrypted at rest. If the underlying storage is ever compromised, the data is exposed in plain form."

@@ -1,0 +1,8 @@
+id: iam-overly-broad-policy
+title: IAM policy granting overly broad permissions
+severity: high
+resource_type: iam_policy
+condition:
+  field: action
+  equals: "*"
+explanation: "This policy grants unrestricted permissions across all AWS services and resources — a single compromised credential with this policy could do anything in the account."

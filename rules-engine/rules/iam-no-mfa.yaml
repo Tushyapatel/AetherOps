@@ -1,0 +1,8 @@
+id: iam-no-mfa
+title: IAM user with no MFA enabled
+severity: medium
+resource_type: iam_user
+condition:
+  field: mfa_enabled
+  equals: false
+explanation: "This IAM user can log in with just a password, with no second factor required — a stolen password alone is enough to gain access."

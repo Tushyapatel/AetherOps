@@ -1,0 +1,8 @@
+id: iam-old-access-key
+title: IAM access key unused or older than 90 days
+severity: medium
+resource_type: iam_access_key
+condition:
+  field: age_days
+  greater_than: 90
+explanation: "This access key hasn't been rotated or used recently. Old, forgotten credentials are a common way attackers gain quiet, long-term access."

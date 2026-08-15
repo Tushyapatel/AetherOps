@@ -1,0 +1,8 @@
+id: root-account-used
+title: Root account used for regular activity
+severity: high
+resource_type: iam_user
+condition:
+  field: is_root
+  equals: true
+explanation: "The root account has unrestricted power over the entire AWS account and should never be used for everyday tasks — a compromised root session is catastrophic."

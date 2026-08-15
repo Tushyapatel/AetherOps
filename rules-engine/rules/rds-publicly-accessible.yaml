@@ -1,0 +1,8 @@
+id: rds-publicly-accessible
+title: RDS instance publicly accessible
+severity: high
+resource_type: rds_instance
+condition:
+  field: publicly_accessible
+  equals: true
+explanation: "This database can be reached directly from the internet rather than only from within your private network, significantly increasing its attack surface."

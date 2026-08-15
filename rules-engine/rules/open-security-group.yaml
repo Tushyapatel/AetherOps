@@ -1,0 +1,9 @@
+id: open-security-group
+title: Security group open to the internet
+severity: high
+resource_type: security_group
+condition:
+  field: inbound_rules.source
+  equals: "0.0.0.0/0"
+  port_in: [22, 3389]
+explanation: "This security group allows access from any IP address on a sensitive port. Attackers routinely scan for exactly this."

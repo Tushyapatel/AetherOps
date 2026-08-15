@@ -1,0 +1,8 @@
+id: public-s3-bucket
+title: S3 bucket publicly readable or writable
+severity: high
+resource_type: s3_bucket
+condition:
+  field: public_read
+  equals: true
+explanation: "This S3 bucket allows public read access, meaning anyone on the internet can view its contents without authentication."
