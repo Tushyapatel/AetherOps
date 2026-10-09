@@ -1,0 +1,6 @@
+ruleCode: "IAM-001"
+name: "IAM User No MFA"
+category: "IAM"
+severity: "HIGH"
+description: "IAM user has no MFA enabled."
+enabled: true

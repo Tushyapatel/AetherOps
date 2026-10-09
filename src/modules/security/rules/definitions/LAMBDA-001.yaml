@@ -1,0 +1,6 @@
+ruleCode: "LAMBDA-001"
+name: "Overly Permissive Lambda Role"
+category: "Compute"
+severity: "MEDIUM"
+description: "Lambda function uses an overly permissive IAM execution role."
+enabled: true

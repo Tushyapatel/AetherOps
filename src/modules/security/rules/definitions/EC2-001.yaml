@@ -1,0 +1,6 @@
+ruleCode: "EC2-001"
+name: "Public EC2 Instance Unprotected"
+category: "Compute"
+severity: "MEDIUM"
+description: "EC2 instance has a public IP and lacks an identified protective WAF/load-balancer relationship."
+enabled: true

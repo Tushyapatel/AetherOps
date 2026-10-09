@@ -1,0 +1,6 @@
+ruleCode: "IAM-002"
+name: "Stale IAM Access Key"
+category: "IAM"
+severity: "MEDIUM"
+description: "IAM access key is older than 90 days or unused for 90 days."
+enabled: true

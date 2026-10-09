@@ -1,0 +1,6 @@
+ruleCode: "IAM-003"
+name: "Overly Permissive IAM Policy"
+category: "IAM"
+severity: "HIGH"
+description: "IAM policy grants administrator-level permissions."
+enabled: true

@@ -1,0 +1,6 @@
+ruleCode: "S3-001"
+name: "Public S3 Bucket"
+category: "Storage"
+severity: "HIGH"
+description: "S3 bucket is publicly readable or writable."
+enabled: true

@@ -1,0 +1,6 @@
+ruleCode: "RDS-002"
+name: "RDS Encryption Disabled"
+category: "Database"
+severity: "MEDIUM"
+description: "RDS encryption is disabled."
+enabled: true

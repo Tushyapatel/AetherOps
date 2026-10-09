@@ -1,0 +1,134 @@
+CURRENT ACCOUNT COMPARISON:
+PASS
+
+CURRENT ACCOUNT DATA SOURCE:
+resources, costs, cloud_accounts (PostgreSQL) -> PricingService
+
+SELECTED ACCOUNT TEST:
+AWS #1 Secure Production
+
+SECOND ACCOUNT TEST:
+AWS #10 Enterprise Critical Risk
+
+ACCOUNT SWITCH RESULT:
+CHANGED
+
+CURRENT AWS BILL SOURCE:
+costs table (filtered by account_id)
+
+BILLING TYPE:
+SIMULATED DEMO BILLING (with fallback to ACTUAL AWS BILLING for live accounts)
+
+AWS ESTIMATE:
+CALCULATED
+
+AZURE ESTIMATE:
+CALCULATED
+
+GCP ESTIMATE:
+CALCULATED
+
+WHAT-IF CALCULATOR:
+PASS
+
+CALCULATOR ROOT CAUSE:
+The previous bug was due to the Pricing clients ignoring `cpu` and `memoryGb` inputs when calculating the cost scale factor. This was fixed by correctly applying dynamic scale calculations based on inputs for Compute and Database.
+
+PRICING CORRECTNESS:
+PASS
+
+INDEPENDENT CALCULATION VERIFICATION:
+PASS
+
+2 → 4 vCPU:
+CHANGED
+
+2 → 8 vCPU:
+CHANGED
+
+MEMORY CHANGE:
+CHANGED
+
+100 → 500 GB:
+CHANGED
+
+730 → 100 HOURS:
+CHANGED
+
+REGION CHANGE:
+CHANGED
+
+OS CHANGE:
+CHANGED
+
+COMPUTE MODEL:
+provider, region, category (COMPUTE), cpu, memoryGb, operatingSystem, hoursPerMonth
+
+DATABASE MODEL:
+provider, region, category (RELATIONAL_DATABASE), cpu, memoryGb, hoursPerMonth
+
+STORAGE MODEL:
+provider, region, category (OBJECT_STORAGE), storageGb
+
+COMPUTE PRICING CATEGORY:
+COMPUTE
+
+DATABASE PRICING CATEGORY:
+RELATIONAL_DATABASE
+
+STORAGE PRICING CATEGORY:
+OBJECT_STORAGE
+
+COMPUTE vs DATABASE:
+DISTINCT
+
+DATABASE vs STORAGE:
+DISTINCT
+
+LARGE INPUT UI:
+PASS
+
+17,777 vCPU UI TEST:
+PASS
+
+RESPONSIVE UI:
+PASS
+
+MONTHLY UNIT:
+USD_PER_MONTH
+
+PRICING MODEL:
+2026.1
+
+UNKNOWN / NOT_COMPARABLE:
+PASS
+
+PROJECT ISOLATION:
+PASS
+
+DATA INTEGRITY:
+PASS
+
+BACKEND TESTS:
+260/260
+
+FRONTEND TESTS:
+17/17
+
+TYPECHECK:
+PASS
+
+BUILD:
+PASS
+
+LINT:
+PASS
+
+LIVE PROVIDERS USED:
+NO
+
+GEMINI USED:
+NO
+
+FINAL PHASE 18.3 STATUS:
+PASS

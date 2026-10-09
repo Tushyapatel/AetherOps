@@ -1,0 +1,7 @@
+ruleCode: "SG-001"
+name: "Public SSH/RDP Access"
+category: "NetworkSecurity"
+severity: "HIGH"
+description: "Security group exposes SSH (22) or RDP (3389) to the public internet."
+remediationTemplate: "Remove 0.0.0.0/0 from SSH and RDP inbound rules."
+enabled: true

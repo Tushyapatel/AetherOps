@@ -1,0 +1,6 @@
+ruleCode: "S3-002"
+name: "S3 Bucket Encryption Disabled"
+category: "Storage"
+severity: "MEDIUM"
+description: "S3 bucket has no server-side encryption."
+enabled: true
